@@ -1,1 +1,11 @@
-<h1>HELLO WORLD</h1>
+<h1>Py-Volution TRACK ME!</h1>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">TRACK ME!
+    </button>
+</form>
+{% if ip and location %}
+<h3><b>IP address: </b> {{ ip }}</h3>
+<h3><b>Location: </b> {{ location }}</h3>
+{{ map|safe }}
+{% endif %}
