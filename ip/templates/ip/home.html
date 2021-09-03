@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
 <h1>Py-Volution TRACK ME!</h1>
 <form method="POST">
     {% csrf_token %}
@@ -5,7 +11,8 @@
     </button>
 </form>
 {% if ip and location %}
-<h3><b>IP address: </b> {{ ip }}</h3>
-<h3><b>Location: </b> {{ location }}</h3>
-{{ map|safe }}
+<h3 id="ip">IP address: {{ ip }}</h3>
+<h3 id="add">Location: {{ location }}</h3>
+<div id="map">{{ map|safe }}</div>
 {% endif %}
+</html>
